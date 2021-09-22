@@ -18,7 +18,7 @@ const students = [{
   lastName: 'Anty',
   age: 21,
   gender: 'Male',
-}{
+}, {
   firstName: 'Manny',
   lastName: 'Toribio',
   age: 28,
@@ -32,6 +32,7 @@ function returnsFullName(person){
 
 // 3 parts in the for loop, intitialize, condition, and increment
 for(let i = 0; i < students.length; i++){
+ // needs if statement
   returnsFullName(students[i])
 } 
 
