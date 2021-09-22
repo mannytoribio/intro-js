@@ -9,15 +9,20 @@ const students = [{
   age: 32,
   gender: 'male',
 }, {
-  firstName:'Khrysrofer',
-  lastName: 'Gil',
-  age: 30,
-  gender: 'male',
-}, {
-  firstName: 'Gabby',
-  lastName: 'Taylor',
-  age: 22,
+  firstName:'Diana',
+  lastName: 'Tineo',
+  age: 32,
   gender: 'female',
+}, {
+  firstName: 'Sebas',
+  lastName: 'Anty',
+  age: 21,
+  gender: 'Male',
+}{
+  firstName: 'Manny',
+  lastName: 'Toribio',
+  age: 28,
+  gender: 'male',
 }]
 
 function returnsFullName(person){
