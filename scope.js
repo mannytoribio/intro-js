@@ -17,4 +17,4 @@ badFunction()
 console.log(globalVar)
 
 // the globalVar inside the function was modified globalVar moving forward outside the block
-// { variable } returns variable as an object with " variable name: 'variable' "
+// { variable } returns variable as an object with " variable name: 'variable' 
