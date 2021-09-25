@@ -73,7 +73,7 @@ cleanerPyramidSolver(5, '&')
 
   // relies on the first function that solves the pyramid
 
-  // min-max problem
+  // min-max problem  
 
   // const minMax = arr => {
   //   if (!arr || arr.length === 0) {   // checks for null and undefined
