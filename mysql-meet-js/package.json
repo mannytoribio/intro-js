@@ -1,0 +1,15 @@
+{
+  "name": "mysql-meet",
+  "version": "0.0.1",
+  "description": "feeling good like i should",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Manny Toribio",
+  "license": "MIT",
+  "dependencies": {
+    "mysql": "^2.18.1"
+  }
+}
