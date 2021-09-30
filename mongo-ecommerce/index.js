@@ -27,6 +27,18 @@ const createUser = async ({userName, dob, email}) => {
   return {userName, dob, email}
 }
 
+const getUsers = async () => {
+  const userCollection = await getUserCollection()
+  const ret = await userCollection.find({
+    userName: 'Manny'
+  })
+  return ret.toArray()
+}
+
+// collection.find(field: { $function })
+// $in [v1, v2, v3, v4] is includes at least one of these values
+// $all [v1, v2, v3, v4] must include all
+
 
 const run = async () => {
   const client = await createClient()
