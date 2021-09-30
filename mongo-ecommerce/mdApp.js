@@ -1,5 +1,5 @@
 import { MongoClient, ObjectId } from "mongodb";
-import dotenv from 'dotenv'
+import dotenv from 'dotenv' //npm i dotenv
 import faker from 'faker'
 
 dotenv.config();
@@ -54,34 +54,56 @@ const createTransactions = async ({customerId, inventoryId, date}) => {
 }
 
 const runNTimes = (n) => {
-
+  
 }
 
+const findCustomers = async () => {
+  const customerCollection = await getCustomerCollection()
+  const ret = await customerCollection.find({});
+  // return ret; object single doc
+  return ret.toArray()
+};
+
+
+// the code below runs and adds new documents
 
 const run = async () => {
   const client = await createClient()
-  const customer = await createCustomer({
-    custName: faker.name.firstName(), 
-    phoneNumber: faker.phone.phoneNumber(), 
-    email: faker.internet.email(), 
-    address: faker.address.city(), 
-    repeat: true,
-  })
-  console.log(customer.insertedId);
-    const inventory = await createInventory({
-      prodName: faker.commerce.productName(), 
-      prodType: faker.commerce.productDescription(), 
-      prodPrice: faker.commerce.price(), 
-      prodColor: faker.commerce.color(), 
-  
-    })
-    const transaction = await createTransactions({
-      customerId: customer.insertedId, 
-      inventoryId: inventory.insertedId, 
-      date: faker.date.past()
-    })
-  console.log(customer.insertedId);
+  const customers = await findCustomers()
+  console.log(customers)
   await client.close()
 }
 
+
+// const run = async () => {
+//   const client = await createClient()
+//   const customer = await createCustomer({
+//     custName: faker.name.firstName(), 
+//     phoneNumber: faker.phone.phoneNumber(), 
+//     email: faker.internet.email(), 
+//     address: faker.address.city(), 
+//     repeat: true,
+//   })
+//   const inventory = await createInventory({
+//     prodName: faker.commerce.productName(), 
+//     prodType: faker.commerce.productDescription(), 
+//     prodPrice: faker.commerce.price(), 
+//     prodColor: faker.commerce.color(), 
+    
+//   })
+//   const transaction = await createTransactions({
+//     customerId: customer.insertedId, 
+//     inventoryId: inventory.insertedId, 
+//     date: faker.date.past()
+//   })
+//   console.log(customer.insertedId);
+//   console.log(inventory.insertedId);
+//   console.log(transaction.insertedId);
+//   await client.close()
+// }
+
 run().then()
+
+// list out customers, inventory, and transactions; use find and filters. 
+// Find orders by customer ID
+// filter product by color (find by)
