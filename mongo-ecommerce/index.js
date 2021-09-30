@@ -34,7 +34,7 @@ const run = async () => {
     userName: 'Manny',
     dob: new Date('09/22/1993'),
     email: 'test@gmail.com'
-  }).then()
+  })
   await client.close()
 }
 
