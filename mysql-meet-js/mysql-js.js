@@ -1,5 +1,7 @@
 import mysql from "mysql"
-import dotenv from "dotenv" 
+import dotenv from "dotenv"
+
+// we can only import mysql because we added "type: 'module' to the package.json"
 
 dotenv.config()
 
